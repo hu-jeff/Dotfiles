@@ -1,0 +1,1 @@
+export TLDR_CACHE_ENABLED=0
