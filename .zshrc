@@ -31,3 +31,5 @@ FINDER_PATH="$(osascript -e 'tell app "Finder" to POSIX path of (insertion locat
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
 
 MANPAGER="vim +MANPAGER -"
+
+PROMPT="%~ %# "
