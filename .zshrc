@@ -28,9 +28,8 @@ export BAT_THEME="TwoDark"
 
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
 
-MANPAGER="vim +MANPAGER -"
-
-PROMPT="%~ %# "
+export MANPAGER="vim +MANPAGER -"
+export PROMPT="%~ %# "
 
 function ff() { osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)' }
 
