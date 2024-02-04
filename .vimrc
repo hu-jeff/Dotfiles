@@ -3,38 +3,19 @@ set background=light
 set mouse=a
 set incsearch
 set number
+set noesckeys
+set smarttab
+set noshowmode
+set hidden
 autocmd VimEnter * highlight clear Conceal
 
-" statusline
-set noshowmode
-set laststatus=2
-set statusline=
-set statusline+=%{StatuslineMode()}
-set statusline+=\ 
-set statusline+=%m
-set statusline+=%=
-set statusline+=%F
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++20 -Wall -Wextra -Wno-unused-result % -o %:r<CR>
+autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
+"
+" inoremap {<CR> {<CR>}<Esc>O
+" inoremap (<CR> (<CR>)<Esc>O
+" inoremap [<CR> [<CR>]<Esc>O
 
-function! StatuslineMode()
-  let l:mode=mode()
-  if l:mode==#"n"
-    return "NORMAL"
-  elseif l:mode==?"v"
-    return "VISUAL"
-  elseif l:mode==#"i"
-    return "INSERT"
-  elseif l:mode==#"R"
-    return "REPLACE"
-  elseif l:mode==?"s"
-    return "SELECT"
-  elseif l:mode==#"t"
-    return "TERMINAL"
-  elseif l:mode==#"c"
-    return "COMMAND"
-  elseif l:mode==#"!"
-    return "SHELL"
-  endif
-endfunction
 
 call plug#begin('~/.vim/plugged')
 
@@ -45,7 +26,7 @@ Plug 'lervag/vimtex'
     " these two lines are for a separate plugin I use: https://github.com/KeitaNakamura/tex-conceal.vim
     set conceallevel=2
     let g:tex_conceal='abdmg'
-    let g:vimtex_compiler_latexmk = {'build_dir': {-> expand("%:t:r")}}
+    let g:vimtex_compiler_latexmk = {}
 
       augroup vimtex_config
 	    au!
@@ -64,10 +45,9 @@ Plug 'tpope/vim-surround'
 
 Plug '/opt/homebrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
-" Plug 'fcpg/vim-fahrenheit'
+Plug 'tpope/vim-sleuth'
 
 call plug#end()
-
-" colorscheme fahrenheit
 colorscheme onedark
+
+let $FZF_DEFAULT_OPTS = '--bind "ctrl-j:down,ctrl-k:up,alt-j:preview-down,alt-k:preview-up"'
