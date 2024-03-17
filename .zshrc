@@ -14,6 +14,7 @@ export BAT_THEME="TwoDark"
 alias ls='ls -Gh'
 
 alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
+alias please=sudo
 
 export MANPAGER="vim +MANPAGER -"
 export PROMPT="%~ %# "

@@ -8,7 +8,7 @@ function crun {
 
   echo "Compiling $1.cc"
 
-  if g++ -std=c++20 -Wall -O2 -Wextra -Wno-unused-result "$1".cc -o "$1"; then
+  if g++ -std=c++17 -Wall -O2 -Wextra -Wno-unused-result "$1".cc -o "$1"; then
     ./"$1"
     echo
     rm "$1"
