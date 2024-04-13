@@ -144,11 +144,6 @@ snippet sq "\sqrt{}" iA
 \sqrt{${1:${VISUAL}}} $0
 endsnippet
 
-priority 100
-context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|theta|rho|times|cdot|gamma|geq|leq|pi|partial|to|delta|exists|forall|implies|neq|nabla|alpha|lambda|iff|beta|sigma|mu)' "ln" rwA
-\\`!p snip.rv = match.group(1) + ' '`
-endsnippet
 
 context "math()"
 snippet inn "in" iA
@@ -318,6 +313,12 @@ snippet box "Box"
 │ $1 │
 `!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
 $0
+endsnippet
+
+priority 100
+context "math()"
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|theta|rho|times|cdot|gamma|geq|leq|pi|partial|to|delta|exists|forall|implies|neq|nabla|alpha|lambda|iff|beta|sigma|mu)' "ln" rwA
+\\`!p snip.rv = match.group(1) + ' '`
 endsnippet
 
 snippet table "Table environment" b

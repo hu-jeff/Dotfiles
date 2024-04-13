@@ -17,7 +17,7 @@ alias config='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
 alias please=sudo
 
 export MANPAGER="vim +MANPAGER -"
-export PROMPT="%~ %# "
+export PROMPT=$'%F{243}%~%f%-40(l::\n) %# '
 
 setopt inc_append_history
 

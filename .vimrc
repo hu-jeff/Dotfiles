@@ -43,11 +43,13 @@ Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-surround'
 
-Plug '/opt/homebrew/opt/fzf'
+Plug '/opt/homebrew/opt/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+let $FZF_DEFAULT_OPTS='--bind "ctrl-j:down,ctrl-k:up,alt-j:preview-down,alt-k:preview-up"'
+
 Plug 'tpope/vim-sleuth'
 
 call plug#end()
 colorscheme onedark
 
-let $FZF_DEFAULT_OPTS = '--bind "ctrl-j:down,ctrl-k:up,alt-j:preview-down,alt-k:preview-up"'
