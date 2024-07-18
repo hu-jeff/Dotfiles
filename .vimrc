@@ -7,6 +7,8 @@ set noesckeys
 set smarttab
 set noshowmode
 set hidden
+set formatoptions-=cro
+
 autocmd VimEnter * highlight clear Conceal
 
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++20 -Wall -Wextra -Wno-unused-result % -o %:r<CR>

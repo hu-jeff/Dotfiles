@@ -26,3 +26,5 @@ function ff() { osascript -e 'tell app "Finder" to POSIX path of (insertion loca
 function cdf() {
 	cd "$(ff)"
 }
+
+
