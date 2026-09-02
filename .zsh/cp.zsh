@@ -1,5 +1,4 @@
-# For competitive programming
-home=~
+home=$HOME
 
 function crun {
   if [[ -z "$1" ]]; then

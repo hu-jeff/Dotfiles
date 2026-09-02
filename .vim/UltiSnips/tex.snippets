@@ -18,6 +18,11 @@ snippet starttemplate "Basic template" b
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{parskip}
+
+\linespread{1.15}
 
 \begin{document}
 	$0
@@ -264,7 +269,7 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
-snippet || "mid" iA
+snippet mid "mid" iA
 \mid 
 endsnippet
 
@@ -356,6 +361,11 @@ endsnippet
 context "math()"
 snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+context "math()"
+snippet || "left| right|" iA
+\left| ${1:${VISUAL}} \right| $0
 endsnippet
 
 snippet __ "subscript" iA
