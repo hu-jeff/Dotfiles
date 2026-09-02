@@ -1,5 +1,3 @@
-home=$HOME
-
 function crun {
   if [[ -z "$1" ]]; then
     echo "No file specified."
@@ -43,8 +41,3 @@ function ccompile {
   fi
 }
 
-function getquestions {
-  source "${home}/.zsh/.venv/bin/activate"
-  python3 "${home}/.zsh/getquestions.py" "$@"
-  deactivate
-}
